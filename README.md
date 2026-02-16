@@ -29,5 +29,5 @@ Criação de formulários em HTML, abordando campos de entrada de texto, data, s
 
 1. Clone o repositório:
    ```bash
-   https://github.com/andximenes/projeto-5-formulario-de-matricula.git
+   https://github.com/andximenes/projeto-6-formulario-convite.git
 
