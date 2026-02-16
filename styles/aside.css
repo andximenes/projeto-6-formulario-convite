@@ -1,0 +1,44 @@
+aside {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 728px;
+
+    & .aside-container {
+        display: flex;
+        padding: 2rem;
+        
+        & .header-container {
+            display: flex;
+            flex-direction: column;
+            z-index: 0;
+            width: 336px;
+            height: 144px;
+            
+            & .icon-logo {
+                height: 2.6rem;
+                width: 2.6rem;
+            }
+
+            h1 {
+                font: var(--logo);
+                color: var(--pink);
+            }
+            p {
+                font: var(--body-xs);
+                color: var(--text-heading);
+                
+            }
+        }
+
+        & .background-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+    }
+
+}
