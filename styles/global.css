@@ -5,19 +5,24 @@
 }
 
 :root {
-    --leckerliOne-family: "Leckerli One", cursive;
-    --baloo2-family: "Baloo 2", sans-serif;
-    --openSans-family: "Open Sans", sans-serif;
+    /* font family */
+    --leckerliOne: "Leckerli One", cursive;
+    --baloo2: "Baloo 2", sans-serif;
+    --openSans: "Open Sans", sans-serif;
 
-    --logo: 400 2.5rem/1.5 var(--leckerliOne-family);
 
-    --heading-md: 700 1.75rem/1.5 var(--baloo2-family);
-    --heading-sm: 700 1.125rem/1.5 var(--baloo2-family);
+    /* size and weight */
+    --logo: 400 2.5rem/1.5 var(--leckerliOne);
 
-    --body-md: 400 1.5rem/1.5 var(--openSans-family);
-    --body-sm: 300 0.875rem/1.5 var(--openSans-family);
-    --body-xs: 300 0.75rem/1.5 var(--openSans-family);
+    --heading-md: 700 1.75rem/1.5 var(--baloo2);
+    --heading-sm: 700 1.125rem/1.5 var(--baloo2);
 
+    --body-md: 400 1.5rem/1.5 var(--openSans);
+    --body-sm: 300 0.875rem/1.5 var(--openSans);
+    --body-xs: 300 0.75rem/1.5 var(--openSans);
+
+
+    /* colors */
     --pink: #FF598B;
     --text-heading: #F9F9F9;
     --text-body: #C8CDD0;
