@@ -44,6 +44,83 @@
                         <h1>Crie seu convite</h1>
                     </div>
                 </header>
+
+                <form action="" method="post" enctype="multipart/form-data">
+                  <section class="container-about-event">
+                        <header>
+                            <img src="./icons/calendar.svg" alt="icon-calendar">
+                            <h2>Sobre o evento</h2>
+                        </header>
+
+                        <div class="wrapper">
+                            <div class="a">
+                                <label class="field-label" for="event-name">Título</label>
+                                <input 
+                                    type="text"
+                                    name="event-name"
+                                    placeholder="Nome do evento"
+                                >
+                            </div>
+        
+                            <div class="b">
+                                <label class="field-label" for="start">Início</label>
+                                <input 
+                                    type="date"
+                                    name="start"
+                                >
+                            </div>
+
+                            <div class="c">
+                                <label class="field-label" for="end">Fim</label>
+                                <input 
+                                    type="date"
+                                    name="end"
+                                >
+                            </div>
+
+                            <div class="d">
+                                <label for="type-presencial">Tipo</label>
+                                <div class="container-button">
+                                    <input 
+                                        type="radio" 
+                                        name="eventType" 
+                                        id="type-presencial" 
+                                        value="presencial" checked
+                                    >
+                                    <label for="type-presencial" class="seg">
+                                        <img src="./icons/building-2.svg" alt="" aria-hidden="true">
+                                        Presencial
+                                    </label>
+
+                                    <input 
+                                        type="radio" 
+                                        name="eventType" 
+                                        id="type-online" 
+                                        value="online">
+                                    <label for="type-online" class="seg">
+                                        <img src="./icons/video.svg" alt="" aria-hidden="true">
+                                        Online
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="e">
+                                <label class="field-label" for="link">Local</label>
+                                <input 
+                                    type="email" 
+                                    name="link"
+                                    placeholder="Link ou E-mail"
+                                >
+                            </div>
+
+                            <div class="f">
+                                <label class="field-label" for="description">Descrição</label>
+                                <textarea name="description" id="description" cols="30" rows="6" placeholder="Escreva sobre os detalhes do evento"></textarea>
+                            </div>
+                        </div>
+                  </section>
+                </form>
             </div>
         </main>
     </div>

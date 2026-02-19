@@ -1,0 +1,145 @@
+/* Labels*/
+& span,
+& .field-label {
+  display: inline-block;
+  font: var(--body-xs);
+  color: var(--text-body);
+  margin-bottom: 12px;
+}
+
+/* inputs (exceto radio)*/
+& input:not([type="radio"]),
+& textarea {
+  width: 100%;
+  height: 48px;
+
+  border-radius: 8px;
+  border: 1px solid var(--body-sm);
+
+  padding: 16px;
+
+  font: var(--text-body);
+  color: #869198;
+  background-color: #1d1c1c;
+
+  outline: none;
+}
+
+/* Textarea (Descrição) */
+& textarea {
+  height: 160px;
+  padding: 16px;
+  resize: vertical; /*o usuário pode aumentar/diminuir só a altura, ou seja, só (verticalmente) */
+}
+
+& .container-about-event {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  & header {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    h2 {
+      font: var(--heading-sm);
+      color: var(--text-heading);
+    }
+  }
+}
+
+& .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+
+  & .a { grid-column: 1 / -1; }
+  & .b { grid-column: 1 / 2; }
+  & .c { grid-column: 2 / 3; }
+  & .d { grid-column: 1 / 2; }
+  & .e { grid-column: 2 / 3; }
+  & .f { grid-column: 1 / -1; }
+  & .g { grid-column: 1 / -1; }
+
+  /* Segmented control (Tipo)*/
+  & .container-button {
+    width: 100%;
+    height: 48px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    align-items: center;
+
+    padding: 4px;
+    margin-top: 12px;
+
+    border-radius: 8px;
+    border: 1px solid var(--body-sm);
+    background-color: #1d1c1c;
+
+    /* radios escondidos (sem bolinhas) */
+    & input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    
+    }
+
+    /* cada opção vira “aba” */
+    /* “pegue o elemento <label> que tem a classe seg” */
+    & label.seg { 
+      height: 100%;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      padding: 0 12px;
+      border-radius: 8px;
+
+      cursor: pointer;
+      user-select: none; /*impede que o usuário selecione o texto com o mouse (aquela marcação azul) quando arrasta ou clica repetidas vezes.*/
+
+      background: transparent;
+      border: 1px solid transparent;
+
+      transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+
+      & img {
+        width: 18px;
+        height: 18px;
+        display: block;
+        opacity: .9;
+      }
+    }
+
+    /* ícones padrão (não selecionado) */
+    & label.seg[for="type-presencial"] img {
+      content: url("../../icons/building-2.svg");
+    }
+    & label.seg[for="type-online"] img {
+      content: url("../../icons/video.svg");
+    }
+
+    /* ativo (selecionado) */
+    & input[type="radio"]:checked + label.seg {
+      background: #2a2a2a;
+      border-color: #3a3a3a;
+      color: #e6e6e6;
+    }
+
+    /* troca o ícone quando estiver selecionado (clique) */
+    & input#type-presencial:checked + label.seg img {
+      content: url("../../icons/building-2-hover.svg");
+    }
+    & input#type-online:checked + label.seg img {
+      content: url("../../icons/video-hover.svg");
+    }
+
+  }
+}
+
