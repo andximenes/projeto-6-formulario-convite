@@ -60,7 +60,7 @@
   & .d { grid-column: 1 / 2; }
   & .e { grid-column: 2 / 3; }
   & .f { grid-column: 1 / -1; }
-  & .g { grid-column: 1 / -1; }
+  
 
   /* Segmented control (Tipo)*/
   & .container-button {
@@ -73,8 +73,7 @@
     align-items: center;
 
     padding: 4px;
-    margin-top: 12px;
-
+  
     border-radius: 8px;
     border: 1px solid var(--body-sm);
     background-color: #1d1c1c;
@@ -117,13 +116,6 @@
       }
     }
 
-    /* ícones padrão (não selecionado) */
-    & label.seg[for="type-presencial"] img {
-      content: url("../../icons/building-2.svg");
-    }
-    & label.seg[for="type-online"] img {
-      content: url("../../icons/video.svg");
-    }
 
     /* ativo (selecionado) */
     & input[type="radio"]:checked + label.seg {
