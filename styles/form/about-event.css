@@ -7,8 +7,8 @@
   margin-bottom: 12px;
 }
 
-/* inputs (exceto radio)*/
-& input:not([type="radio"]),
+/* inputs (seleciona todo elemento que NÃO seja radio, checkbox e textarea aplique)*/
+& input:not([type="radio"]):not([type="checkbox"]),
 & textarea {
   width: 100%;
   height: 48px;
@@ -25,6 +25,10 @@
   outline: none;
 }
 
+& input:not([type="radio"]):not([type="checkbox"]):focus,
+& textarea:focus {
+  border-color: var(--border-active); 
+}
 /* Textarea (Descrição) */
 & textarea {
   height: 160px;
@@ -87,7 +91,7 @@
     }
 
     /* cada opção vira “aba” */
-    /* “pegue o elemento <label> que tem a classe seg” */
+    /* “selecione somente os elementos <label> que tem a classe seg” */
     & label.seg { 
       height: 100%;
       width: 100%;
