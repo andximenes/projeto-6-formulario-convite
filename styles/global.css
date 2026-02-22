@@ -37,6 +37,7 @@ body {
     caret-color: transparent; /* esconde a caret por padrão */
 }
 
+
 /* padrão de espaçamento entre os elementos */
 .flex-pattern {
     display: flex;

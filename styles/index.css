@@ -1,5 +1,6 @@
 @import url(./global.css);
 @import url(./layout.css);
 
-/* referente ao diretório form */
-@import url(./form/index.css);
+/* referente aos diretórios das sections*/
+@import url(./section-1/index.css);
+@import url(./section-2/index.css);
