@@ -34,4 +34,65 @@
 body {
     overflow: hidden;
     color: var(--text-body);
+    caret-color: transparent; /* esconde a caret por padrão */
+}
+
+/* padrão de espaçamento entre os elementos */
+.flex-pattern {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* disposição do conteúdo dos cabeçalhos dos formulários */
+.header-style {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    h2 {
+        font: var(--heading-sm);
+        color: var(--text-heading);
+    }
+}
+
+span,
+.field-label {
+    display: inline-block;
+    font: var(--body-xs);
+    color: var(--text-body);
+    margin-bottom: 12px;
+}
+
+/* esconde o icone do calendário */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+/* Inputs (exceto radio e checkbox) + textarea */
+input:not([type="radio"]):not([type="checkbox"]),
+textarea {
+    width: 100%;
+    height: 48px;
+
+    border-radius: 8px;
+    border: 1px solid var(--shape-background);
+
+    padding: 16px;
+
+    font: var(--text-body);
+    color: #869198;
+    background-color: #1d1c1c;
+
+    outline: none;
+
+    &:focus {
+        border-color: var(--border-active);
+    }
+}
+
+/* Textarea (Descrição) */
+textarea {
+    height: 160px;
+    resize: vertical;
 }

@@ -44,10 +44,11 @@
                         <h1>Crie seu convite</h1>
                     </div>
                 </header>
-
+                
                 <form action="" method="post" enctype="multipart/form-data">
-                  <section class="container-about-event">
-                        <header>
+                    <!-- Sessão Sobre o Evento -->
+                    <section class="flex-pattern">
+                        <header class="header-style">
                             <img src="./icons/calendar.svg" alt="icon-calendar">
                             <h2>Sobre o evento</h2>
                         </header>
@@ -58,6 +59,7 @@
                                 <input 
                                     type="text"
                                     name="event-name"
+                                    id="event-name"
                                     placeholder="Nome do evento"
                                 >
                             </div>
@@ -65,16 +67,18 @@
                             <div class="b">
                                 <label class="field-label" for="start">Início</label>
                                 <input 
-                                    type="date"
+                                    type="datetime-local"
                                     name="start"
+                                    id="start"
                                 >
                             </div>
 
                             <div class="c">
                                 <label class="field-label" for="end">Fim</label>
                                 <input 
-                                    type="date"
+                                    type="datetime-local"
                                     name="end"
+                                    id="end"
                                 >
                             </div>
 
@@ -110,6 +114,7 @@
                                 <input 
                                     type="email" 
                                     name="link"
+                                    id="link"
                                     placeholder="Link ou E-mail"
                                 >
                             </div>
@@ -119,7 +124,20 @@
                                 <textarea name="description" id="description" cols="30" rows="6" placeholder="Escreva sobre os detalhes do evento"></textarea>
                             </div>
                         </div>
-                  </section>
+                    </section>
+                    
+                    <!-- Sessão Customização -->
+                    <section class="container-customization flex-pattern">
+                        <header class="header-style">
+                            <img src="./icons/paintbrush-vertical.svg" alt="">
+                            <h2>Personalização</h2>
+                        </header>
+
+                        <!-- paleta de cores -->
+                        <div class="main-color">
+                            <span>Cor principal</span>
+                        </div>
+                    </section>
                 </form>
             </div>
         </main>

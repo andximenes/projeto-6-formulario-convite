@@ -1,73 +1,18 @@
-/* Labels*/
-& span,
-& .field-label {
-  display: inline-block;
-  font: var(--body-xs);
-  color: var(--text-body);
-  margin-bottom: 12px;
-}
-
-/* inputs (seleciona todo elemento que NÃO seja radio, checkbox e textarea aplique)*/
-& input:not([type="radio"]):not([type="checkbox"]),
-& textarea {
-  width: 100%;
-  height: 48px;
-
-  border-radius: 8px;
-  border: 1px solid var(--body-sm);
-
-  padding: 16px;
-
-  font: var(--text-body);
-  color: #869198;
-  background-color: #1d1c1c;
-
-  outline: none;
-}
-
-& input:not([type="radio"]):not([type="checkbox"]):focus,
-& textarea:focus {
-  border-color: var(--border-active); 
-}
-/* Textarea (Descrição) */
-& textarea {
-  height: 160px;
-  padding: 16px;
-  resize: vertical; /*o usuário pode aumentar/diminuir só a altura, ou seja, só (verticalmente) */
-}
-
-& .container-about-event {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-
-  & header {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-
-    h2 {
-      font: var(--heading-sm);
-      color: var(--text-heading);
-    }
-  }
-}
-
-& .wrapper {
+/* Grid wrapper */
+.wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  gap: 10px;
 
-  & .a { grid-column: 1 / -1; }
-  & .b { grid-column: 1 / 2; }
-  & .c { grid-column: 2 / 3; }
-  & .d { grid-column: 1 / 2; }
-  & .e { grid-column: 2 / 3; }
-  & .f { grid-column: 1 / -1; }
-  
+  .a { grid-column: 1 / -1; }
+  .b { grid-column: 1 / 2; }
+  .c { grid-column: 2 / 3; }
+  .d { grid-column: 1 / 2; }
+  .e { grid-column: 2 / 3; }
+  .f { grid-column: 1 / -1; }
 
-  /* Segmented control (Tipo)*/
-  & .container-button {
+  /* Segmented control (Tipo) */
+  .container-button {
     width: 100%;
     height: 48px;
 
@@ -77,22 +22,23 @@
     align-items: center;
 
     padding: 4px;
-  
     border-radius: 8px;
-    border: 1px solid var(--body-sm);
     background-color: #1d1c1c;
 
-    /* radios escondidos (sem bolinhas) */
-    & input[type="radio"] {
+    /* quando algum radio dentro tiver foco (TAB) */
+    &:focus-within {
+      border-color: var(--border-active);
+    }
+
+    /* radios escondidos */
+    input[type="radio"] {
       position: absolute;
       opacity: 0;
       pointer-events: none;
-    
     }
 
-    /* cada opção vira “aba” */
-    /* “selecione somente os elementos <label> que tem a classe seg” */
-    & label.seg { 
+    /* labels viram "abas" */
+    label.seg {
       height: 100%;
       width: 100%;
 
@@ -105,14 +51,16 @@
       border-radius: 8px;
 
       cursor: pointer;
-      user-select: none; /*impede que o usuário selecione o texto com o mouse (aquela marcação azul) quando arrasta ou clica repetidas vezes.*/
+      user-select: none;
 
       background: transparent;
       border: 1px solid transparent;
 
-      transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+      transition: background-color .15s ease,
+                  border-color .15s ease,
+                  color .15s ease;
 
-      & img {
+      img {
         width: 18px;
         height: 18px;
         display: block;
@@ -120,22 +68,20 @@
       }
     }
 
-
     /* ativo (selecionado) */
-    & input[type="radio"]:checked + label.seg {
+    input[type="radio"]:checked + label.seg {
       background: #2a2a2a;
       border-color: #3a3a3a;
       color: #e6e6e6;
     }
 
-    /* troca o ícone quando estiver selecionado (clique) */
-    & input#type-presencial:checked + label.seg img {
+    /* troca o ícone quando selecionado */
+    input#type-presencial:checked + label.seg img {
       content: url("../../icons/building-2-hover.svg");
     }
-    & input#type-online:checked + label.seg img {
+
+    input#type-online:checked + label.seg img {
       content: url("../../icons/video-hover.svg");
     }
-
   }
 }
-
